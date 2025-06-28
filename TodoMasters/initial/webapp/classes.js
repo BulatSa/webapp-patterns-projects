@@ -1,6 +1,6 @@
 import { observerMixin } from "./mixin.js";
 
-class TodoItem {
+export class TodoItem {
   constructor(text) {
     this.text = text;
   }
@@ -10,7 +10,7 @@ class TodoItem {
   }
 }
 
-class TodoList {
+export class TodoList {
   #data = new Set();
 
   // Singleton
@@ -53,7 +53,7 @@ class TodoList {
   find(todo_text) {
     const array = Array.from(this.#data);
 
-    return array.find((todo) => (todo.text = todo_text));
+    return array.find((todo) => (todo.text == todo_text));
   }
 
   replaceList(list) {
